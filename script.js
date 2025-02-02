@@ -21,7 +21,7 @@ function addBookToLibrary(title, author, pages, isRead = false) {
     myLibrary.push(book);
 }
 
-//myLibrary.push(theHobbit, intelligentDesign, atomicHabits, theAlchemist);
+myLibrary.push(theHobbit, intelligentDesign, atomicHabits, theAlchemist);
 
 function toCamelCase(str) {
     return str.split(' ').map(function (word, index) {
@@ -40,4 +40,5 @@ addForm.addEventListener('submit', function (e) {
     const formPages = addForm.querySelector('input[id="pages"]').value;
     const formIsRead = addForm.querySelector('input[id="isRead"]').checked;
     addBookToLibrary(formTitle, formAuthor, formPages, formIsRead)
+    addForm.reset()
 });
