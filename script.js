@@ -32,13 +32,13 @@ function toCamelCase(str) {
     }).join('')
 }
 
-const addForm = document.forms['add-book'];
-addForm.addEventListener('submit', function (e) {
+const submitBook = document.forms['add-book'];
+submitBook.addEventListener('submit', function (e) {
     e.preventDefault();
-    const formTitle = addForm.querySelector('input[id="title"]').value;
-    const formAuthor = addForm.querySelector('input[id="author"]').value;
-    const formPages = addForm.querySelector('input[id="pages"]').value;
-    const formIsRead = addForm.querySelector('input[id="isRead"]').checked;
+    const formTitle = submitBook.querySelector('input[id="title"]').value;
+    const formAuthor = submitBook.querySelector('input[id="author"]').value;
+    const formPages = submitBook.querySelector('input[id="pages"]').value;
+    const formIsRead = submitBook.querySelector('input[id="isRead"]').checked;
     addBookToLibrary(formTitle, formAuthor, formPages, formIsRead)
-    addForm.reset()
+    submitBook.reset()
 });
