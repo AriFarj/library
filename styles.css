@@ -1,0 +1,16 @@
+form {
+    display:none;
+}
+
+body {
+    background-color: rgb(240, 238, 241);
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+justify-content: center;
+}
