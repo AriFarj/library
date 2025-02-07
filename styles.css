@@ -34,6 +34,6 @@ body {
     border-radius: 10px;
 }
 
-.btn-add-book:hover {
+.btn:hover {
     filter:brightness(90%)
 }
