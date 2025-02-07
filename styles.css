@@ -1,16 +1,39 @@
+:root {
+    --grey: rgb(225, 223, 226);
+}
+
 form {
-    display:none;
+    display: none;
 }
 
 body {
-    background-color: rgb(240, 238, 241);
+    background-color: var(--grey);
     margin: 0;
     padding: 0;
 }
 
 .header {
     background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.452) 0px 1px 4px;
     display: flex;
-justify-content: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+.content-container {
+    text-align: center;
+    margin-top: 30px
+}
+
+.btn-add-book {
+    font-size: 22px;
+    font-weight: 700;
+    background-color: var(--grey);
+    padding: 15px;
+    border-style: none;
+    border-radius: 10px;
+}
+
+.btn-add-book:hover {
+    filter:brightness(90%)
 }
