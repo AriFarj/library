@@ -1,5 +1,6 @@
 const myLibrary = [];
 const libraryGrid = document.querySelector('.library-grid')
+let i = 0;
 
 
 // TEMP BOOKS FOR WIP
@@ -20,18 +21,11 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(title, author, pages, isRead = false) {
     const book = new Book(title, author, pages, isRead)
     myLibrary.push(book);
+    addLibraryCard(book);
 }
 
 myLibrary.push(theHobbit, intelligentDesign, atomicHabits, theAlchemist);
 
-function toCamelCase(str) {
-    return str.split(' ').map(function (word, index) {
-        if (index == 0) {
-            return word.toLowerCase();
-        }
-        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-    }).join('')
-}
 
 const submitBook = document.forms['add-book'];
 submitBook.addEventListener('submit', function (e) {
@@ -44,7 +38,7 @@ submitBook.addEventListener('submit', function (e) {
     submitBook.reset()
 });
 
-function addLibraryCard() {
+function addLibraryCard(book) {
     const libraryCardDiv = document.createElement('div');
     const p1 = document.createElement('p');
     const p2 = document.createElement('p');
@@ -61,6 +55,9 @@ function addLibraryCard() {
     removeBtn.classList.add('btn')
     removeBtn.classList.add('remove-btn')
 
+   // p1.textContent = myLibrary[i].title
+    addCardContent(book,p1,p2,p3);
+
     libraryCardDiv.appendChild(p1);
     libraryCardDiv.appendChild(p2);
     libraryCardDiv.appendChild(p3);
@@ -68,4 +65,11 @@ function addLibraryCard() {
     btnCtrlDiv.appendChild(statusBtn);
     btnCtrlDiv.appendChild(removeBtn);
     libraryGrid.appendChild(libraryCardDiv)
+    i++;
+}
+
+function addCardContent(book,p1,p2,p3) {
+    p1.textContent = book.title
+    p2.textContent = book.author
+    p3.textContent = book.pages
 }
