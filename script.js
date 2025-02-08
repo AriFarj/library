@@ -7,14 +7,6 @@ const removeBtn = document.querySelector('.remove-btn')
 const statusBtn = document.querySelector('.status')
 
 
-// TEMP BOOKS FOR WIP
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, true)
-const intelligentDesign = new Book('Intelligent Design', 'William Dembski', 312, false)
-const atomicHabits = new Book('Atomic Habits', 'James Clear', 288, false)
-const theAlchemist = new Book('The Alchemist', 'Paulo Coelho', 208, true)
-
-
-
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
