@@ -50,8 +50,12 @@ button:hover {
     gap: 8px;
 }
 
-.status-notRead-btn {
+.status-not-read-btn {
     background-color: rgb(255, 154, 154);
+}
+
+.status-read-btn {
+    background-color: rgb(196, 236, 187);
 }
 
 .remove-btn {

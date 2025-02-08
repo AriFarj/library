@@ -26,9 +26,6 @@ function addBookToLibrary(title, author, pages, isRead = false) {
     addLibraryCard(book);
 }
 
-
-
-
 const submitBook = document.forms['add-book'];
 submitBook.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -53,14 +50,19 @@ function addLibraryCard(book) {
     libraryCardDiv.classList.add('library-card')
     btnCtrlDiv.classList.add('button-control')
     statusBtn.classList.add('btn')
-    statusBtn.classList.add('status-notRead-btn')
+
     removeBtn.classList.add('btn')
     removeBtn.classList.add('remove-btn')
 
-    // p1.textContent = myLibrary[i].title
     addCardContent(book, p1, p2, p3);
-
-    statusBtn.textContent = 'Not read'
+    console.log(book.read)
+    if (book.read) {
+        statusBtn.classList.add('status-read-btn')
+        statusBtn.textContent = 'Read'
+    } else {
+        statusBtn.classList.add('status-not-read-btn')
+        statusBtn.textContent = 'Not Read'
+    }
     removeBtn.textContent = 'Remove'
 
     libraryCardDiv.appendChild(p1);
