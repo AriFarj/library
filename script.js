@@ -1,4 +1,5 @@
 const myLibrary = [];
+const libraryGrid = document.querySelector('.library-grid')
 
 
 // TEMP BOOKS FOR WIP
@@ -42,3 +43,29 @@ submitBook.addEventListener('submit', function (e) {
     addBookToLibrary(formTitle, formAuthor, formPages, formIsRead)
     submitBook.reset()
 });
+
+function addLibraryCard() {
+    const libraryCardDiv = document.createElement('div');
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+
+    const btnCtrlDiv = document.createElement('div');
+    const statusBtn = document.createElement('button');
+    const removeBtn = document.createElement('button')
+
+    libraryCardDiv.classList.add('library-card')
+    btnCtrlDiv.classList.add('button-control')
+    statusBtn.classList.add('btn')
+    statusBtn.classList.add('status-notRead-btn')
+    removeBtn.classList.add('btn')
+    removeBtn.classList.add('remove-btn')
+
+    libraryCardDiv.appendChild(p1);
+    libraryCardDiv.appendChild(p2);
+    libraryCardDiv.appendChild(p3);
+    libraryCardDiv.appendChild(btnCtrlDiv);
+    btnCtrlDiv.appendChild(statusBtn);
+    btnCtrlDiv.appendChild(removeBtn);
+    libraryGrid.appendChild(libraryCardDiv)
+}
