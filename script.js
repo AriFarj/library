@@ -24,7 +24,7 @@ function addBookToLibrary(title, author, pages, isRead = false) {
     addLibraryCard(book);
 }
 
-myLibrary.push(theHobbit, intelligentDesign, atomicHabits, theAlchemist);
+
 
 
 const submitBook = document.forms['add-book'];
@@ -57,6 +57,9 @@ function addLibraryCard(book) {
 
    // p1.textContent = myLibrary[i].title
     addCardContent(book,p1,p2,p3);
+
+    statusBtn.textContent = 'Not read'
+    removeBtn.textContent = 'Remove'
 
     libraryCardDiv.appendChild(p1);
     libraryCardDiv.appendChild(p2);
