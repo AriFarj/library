@@ -1,6 +1,8 @@
 const myLibrary = [];
 const libraryGrid = document.querySelector('.library-grid')
-let i = 0;
+const addBookBtn = document.querySelector('.btn-add-book')
+const addBookForm = document.querySelector('.form-div')
+const overlay = document.querySelector('.overlay')
 
 
 // TEMP BOOKS FOR WIP
@@ -55,8 +57,8 @@ function addLibraryCard(book) {
     removeBtn.classList.add('btn')
     removeBtn.classList.add('remove-btn')
 
-   // p1.textContent = myLibrary[i].title
-    addCardContent(book,p1,p2,p3);
+    // p1.textContent = myLibrary[i].title
+    addCardContent(book, p1, p2, p3);
 
     statusBtn.textContent = 'Not read'
     removeBtn.textContent = 'Remove'
@@ -68,11 +70,27 @@ function addLibraryCard(book) {
     btnCtrlDiv.appendChild(statusBtn);
     btnCtrlDiv.appendChild(removeBtn);
     libraryGrid.appendChild(libraryCardDiv)
-    i++;
+
+    addBookForm.style.display = 'none';
+    overlay.style.display = 'none';
 }
 
-function addCardContent(book,p1,p2,p3) {
+function addCardContent(book, p1, p2, p3) {
     p1.textContent = book.title
     p2.textContent = book.author
     p3.textContent = book.pages
 }
+
+addBookBtn.addEventListener("click", () => {
+    addBookForm.style.display = 'block';
+    overlay.style.display = 'block';
+})
+
+document.addEventListener('click', (e) => {
+    let clickedElem = e.target;
+    if (clickedElem == overlay) {
+        addBookForm.style.display = 'none';
+        overlay.style.display = 'none';
+    }
+})
+
