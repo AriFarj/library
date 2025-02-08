@@ -3,6 +3,7 @@ const libraryGrid = document.querySelector('.library-grid')
 const addBookBtn = document.querySelector('.btn-add-book')
 const addBookForm = document.querySelector('.form-div')
 const overlay = document.querySelector('.overlay')
+const removeBtn = document.querySelector('.remove-btn')
 
 
 // TEMP BOOKS FOR WIP
@@ -55,7 +56,6 @@ function addLibraryCard(book) {
     removeBtn.classList.add('remove-btn')
 
     addCardContent(book, p1, p2, p3);
-    console.log(book.read)
     if (book.read) {
         statusBtn.classList.add('status-read-btn')
         statusBtn.textContent = 'Read'
@@ -75,6 +75,7 @@ function addLibraryCard(book) {
 
     addBookForm.style.display = 'none';
     overlay.style.display = 'none';
+    removeBtn.onclick = removeBook
 }
 
 function addCardContent(book, p1, p2, p3) {
@@ -96,3 +97,6 @@ document.addEventListener('click', (e) => {
     }
 })
 
+function removeBook(e) {
+    e.target.parentNode.parentNode.remove()
+}
