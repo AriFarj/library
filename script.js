@@ -4,6 +4,7 @@ const addBookBtn = document.querySelector('.btn-add-book')
 const addBookForm = document.querySelector('.form-div')
 const overlay = document.querySelector('.overlay')
 const removeBtn = document.querySelector('.remove-btn')
+const statusBtn = document.querySelector('.status')
 
 
 // TEMP BOOKS FOR WIP
@@ -55,13 +56,14 @@ function addLibraryCard(book) {
     removeBtn.classList.add('btn')
     removeBtn.classList.add('remove-btn')
 
+    statusBtn.classList.add('status')
     addCardContent(book, p1, p2, p3);
     if (book.read) {
         statusBtn.classList.add('status-read-btn')
         statusBtn.textContent = 'Read'
     } else {
         statusBtn.classList.add('status-not-read-btn')
-        statusBtn.textContent = 'Not Read'
+        statusBtn.textContent = 'Not read'
     }
     removeBtn.textContent = 'Remove'
 
@@ -76,6 +78,8 @@ function addLibraryCard(book) {
     addBookForm.style.display = 'none';
     overlay.style.display = 'none';
     removeBtn.onclick = removeBook
+    statusBtn.onclick = changeBookStatus;
+
 }
 
 function addCardContent(book, p1, p2, p3) {
@@ -99,4 +103,16 @@ document.addEventListener('click', (e) => {
 
 function removeBook(e) {
     e.target.parentNode.parentNode.remove()
+}
+
+function changeBookStatus(e) {
+    if (e.target.textContent == 'Read') {
+        e.target.classList.remove('status-read-btn')
+        e.target.classList.add('status-not-read-btn')
+        e.target.textContent = 'Not read'
+    } else {
+        e.target.classList.add('status-read-btn')
+        e.target.classList.remove('status-not-read-btn')
+        e.target.textContent = 'Read'
+    }
 }
