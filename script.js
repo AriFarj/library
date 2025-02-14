@@ -7,11 +7,13 @@ const removeBtn = document.querySelector('.remove-btn')
 const statusBtn = document.querySelector('.status')
 
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
 function addBookToLibrary(title, author, pages, isRead = false) {
